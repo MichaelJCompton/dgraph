@@ -60,7 +60,7 @@ rebuild() {
 	export CURRENT_VERSION=${2}
 	export VERSIONS=${VERSION_STRING}
 
-	cmd=hugo_v0.19
+	cmd=hugo_0.19
 	# Hugo broke backward compatibility, so files for version > 1.0.5 can use newer hugo (v0.38 onwards) but files in
 	# older versions have to use hugo v0.19
 	# If branch is master or version is >= 1.0.5 then use newer hugo
@@ -71,7 +71,7 @@ rebuild() {
 	HUGO_TITLE="Dgraph Doc ${2}"\
 		VERSIONS=${VERSION_STRING}\
 		CURRENT_BRANCH=${1}\
-		CURRENT_VERSION=${2} $(cmd)\
+		CURRENT_VERSION=${2} $cmd\
 		--destination=public/"$dir"\
 		--baseURL="$HOST"/"$dir" 1> /dev/null
 }
